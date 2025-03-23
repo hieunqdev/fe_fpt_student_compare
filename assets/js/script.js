@@ -69,9 +69,6 @@ function updateFileCount(input) {
     input.value = '';
 }
 
-
-
-
 function handleSubmit() {
     alert("Đã nhấn nút Submit!");
 }
