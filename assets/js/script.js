@@ -1,10 +1,18 @@
 function downloadTemplate() {
     const school = document.getElementById('school').value;
+    const fileName = school === 'polytechnic' ? 'Poly_Danh_sach_QD_Template.xlsx' : 'FPS_Danh_sach_QD_Template.xlsx';
+    const filePath = `assets/templates/${fileName}`;
+
     const link = document.createElement('a');
-    link.href = school === 'polytechnic' ? 'assets/templates/FPS_Danh_sach_QD_Template.xlsx' : 'assets/templates/FPS_Danh_sach_QD_Template.xlsx';
-    link.download = link.href;
+    link.href = filePath;
+    link.download = fileName;
+    document.body.appendChild(link);  // Đảm bảo thêm vào DOM để kích hoạt sự kiện click
     link.click();
+    document.body.removeChild(link);  // Dọn dẹp sau khi tải
+
+    console.log(`✅ Đã tải xuống tệp: ${fileName} từ ${filePath}`);
 }
+
 
 function toggleCheckOptions() {
     const functionSelect = document.getElementById('functionSelect').value;
