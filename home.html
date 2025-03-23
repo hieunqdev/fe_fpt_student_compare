@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Files</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/script.js"></script>
+    </style>
+</head>
+<body>
+    <p style="text-align: center;">
+        <img src="assets/images/FPLLogoR.png" alt="" width="200px">
+        <img src="assets/images/FPSLogoR.png" alt="" width="200px">
+    </p>
+    <div class="container">
+        <!-- <h1>Xử lý quyết định</h1> -->
+        <div class="selection-container">
+            <h3>1. Chọn hệ đào tạo:</label>
+            <select id="school" onchange="toggleUploadSections()">
+                <option value="" disabled selected>Chọn hệ đào tạo</option>
+                <option value="polytechnic">FPT Polytechnic</option>
+                <option value="polyschool">FPT Polyschool</option>
+            </select>
+        </div>
+        <div class="selection-container">
+            <h3>2. Tải về template:</label>
+            <button onclick="downloadTemplate()" style="border: none; background: transparent; cursor: pointer; color:#333">
+                <i class="fas fa-download" style="font-size: 24px;"></i>
+            </button>
+        </div>
+
+        <div class="upload-section">
+            <h3>3. Tải lên danh sách sinh viên:</label>
+            <input type="file" id="excelUpload" accept=".xlsx, .xls">
+        </div>
+        <div class="upload-section">
+            <h3>4. Tải lên danh sách quyết định:</h3>
+        </div>
+        
+        
+        <div class="upload-section polytechnic-decision hidden">
+            
+            <div class="upload-grid">
+                <div class="upload-item">
+                    <label>Công nhận sinh viên:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+                <div class="upload-item">
+                    <label>Chuyển ngành:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+                <div class="upload-item">
+                    <label>Chuyển cơ sở:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+                <div class="upload-item">
+                    <label>Nghỉ học tạm thời:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+                <div class="upload-item">
+                    <label>Nhập học trở lại:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+                <div class="upload-item">
+                    <label>Chuyển khung:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+                <div class="upload-item">
+                    <label>Miễn giảm môn học:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+                <div class="upload-item">
+                    <label>Khen thưởng:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+                <div class="upload-item">
+                    <label>Khen thưởng:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+                <div class="upload-item">
+                    <label>Công nhận tốt nghiệp:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+            </div>
+                
+            
+        </div>
+        <div class="upload-section polyschool-decision hidden">
+            <!-- <h3>4. Tải lên danh sách quyết định:</h3> -->
+            <div class="upload-grid">
+                <div class="upload-item">
+                    <label>Công nhận sinh viên:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+                <div class="upload-item">
+                    <label>Chuyên ngành:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+                <div class="upload-item">
+                    <label>Miễn giảm:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+                <div class="upload-item">
+                    <label>Chuyển ngành:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+                <div class="upload-item">
+                    <label>Bảo lưu:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+                <div class="upload-item">
+                    <label>Thôi học:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+                <div class="upload-item">
+                    <label>Chuyển cơ sở:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+                <div class="upload-item">
+                    <label>Khen thưởng:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+                <div class="upload-item">
+                    <label>Kỷ luật:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+                <div class="upload-item">
+                    <label>Tốt nghiệp Trung cấp:</label>
+                    <input type="file" accept=".pdf" multiple>
+                </div>
+            </div>
+
+        </div>
+        <div class="function-section">
+            <h3>5. Chọn chức năng:</label>
+            <select id="functionSelect" onchange="toggleCheckOptions()">
+                <option value="addDecision">Thêm Quyết định</option>
+                <option value="checkInfo">Thêm Quyết định và Kiểm tra thông tin sinh viên</option>
+                <!-- <option value="all">Tất cả</option> -->
+            </select>
+            <div id="checkOptions" class="input-group hidden">
+                <label>Ngày sinh:</label>
+                <input type="text" id="birthDateCol" placeholder="Tên cột của file PDF Quyết định Công nhận sinh viên">
+                <label>Giới tính:</label>
+                <input type="text" id="genderCol" placeholder="Tên cột của file PDF Quyết định Công nhận sinh viên">
+                <label>Dân tộc:</label>
+                <input type="text" id="ethnicityCol" placeholder="Tên cột của file PDF Quyết định Công nhận sinh viên">
+            </div>
+        </div>
+        <div id="response" class="response"></div>
+            <!-- Nội dung của bạn ở đây -->
+            <button class="submit-btn" onclick="handleSubmit()">Submit</button>
+        </div>
+</body>
+</html>
