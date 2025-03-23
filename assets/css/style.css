@@ -181,3 +181,18 @@ h3 {
 .selection-container button {
     margin-top: 5px;
 }
+
+.file-count {
+    margin-left: 8px;
+    font-size: 14px;
+    color: #555;
+}
+
+input[type="file"].file-uploaded {
+    border: 2px solid #4CAF50;
+    box-shadow: 0 0 8px #4CAF50;
+    transition: all 0.2s ease;
+}
+
+
+
