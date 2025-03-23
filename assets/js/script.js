@@ -69,6 +69,41 @@ function updateFileCount(input) {
     input.value = '';
 }
 
-function handleSubmit() {
-    alert("Đã nhấn nút Submit!");
+// Lắng nghe sự kiện focus trên tất cả các input
+let selectedDiv = null;
+
+function highlightDiv(div) {
+    // Xóa lớp "active" khỏi tất cả các div
+    document.querySelectorAll('.upload-item').forEach(item => item.classList.remove('active'));
+    // Đặt div đã chọn
+    selectedDiv = div;
+    // Thêm lớp "active" vào div được chọn
+    div.classList.add('active');
+}
+
+function updateFileCount(input) {
+    const fileCountSpan = input.parentElement.querySelector('.file-count');
+    fileCountSpan.textContent = `${input.files.length} tệp`;
+}
+
+function checkSelectedDiv() {
+    const messageElement = document.getElementById('resultMessage');
+    
+    if (!selectedDiv) {
+        messageElement.textContent = "Vui lòng chọn một mục trước!";
+        messageElement.className = "message";
+        return;
+    }
+
+    // Lấy span hiển thị số lượng tệp
+    const fileCountSpan = selectedDiv.querySelector('.file-count');
+    const fileCount = parseInt(fileCountSpan.textContent);
+
+    if (fileCount > 0) {
+        messageElement.textContent = "OK";
+        messageElement.className = "message ok";
+    } else {
+        messageElement.textContent = "Chưa có tệp!";
+        messageElement.className = "message";
+    }
 }

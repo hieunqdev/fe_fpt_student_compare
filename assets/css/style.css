@@ -194,5 +194,28 @@ input[type="file"].file-uploaded {
     transition: all 0.2s ease;
 }
 
+.upload-item {
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid transparent;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.upload-item.active {
+    border-color: #3498db;
+    box-shadow: 0 0 8px #3498db;
+}
+
+.message {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.message.ok {
+    color: #2ecc71;
+}
+
 
 
