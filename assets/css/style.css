@@ -217,5 +217,12 @@ input[type="file"].file-uploaded {
     color: #2ecc71;
 }
 
+input.file-uploaded {
+    border: 2px solid #4CAF50;
+    box-shadow: 0 0 10px #4CAF50;
+    transition: 0.3s;
+}
+
+
 
 

@@ -9,15 +9,19 @@ function downloadTemplate() {
     document.body.appendChild(link);  // Đảm bảo thêm vào DOM để kích hoạt sự kiện click
     link.click();
     document.body.removeChild(link);  // Dọn dẹp sau khi tải
-
-    console.log(`✅ Đã tải xuống tệp: ${fileName} từ ${filePath}`);
 }
 
 
+var chonQuyetDinh = "poly_cnsv";
 function toggleCheckOptions() {
     const functionSelect = document.getElementById('functionSelect').value;
-    const checkOptions = document.getElementById('checkOptions');
-    checkOptions.classList.toggle('hidden', functionSelect !== 'checkInfo');
+    switch(functionSelect) {
+        case "poly_cnsv":
+            chonQuyetDinh = "poly_cnsv";
+            break;
+        default:
+            console.log("ko co");
+    }
 }
 
 // upload pdf file
@@ -31,43 +35,14 @@ function toggleUploadSections() {
 
 // count pdf file
 // Khởi tạo đối tượng để lưu trữ tệp đã chọn cho từng input
+// Khởi tạo đối tượng để lưu trữ tệp đã chọn cho từng input
 const fileMap = new Map();
 
 function updateFileCount(input) {
-    const inputId = input.getAttribute('id') || Math.random().toString(36).substr(2, 9);
-
-    // Nếu input chưa có ID thì tự động gán
-    if (!input.id) {
-        input.id = inputId;
-    }
-
-    // Lấy danh sách tệp từ input
-    const files = Array.from(input.files);
-
-    // Nếu chưa có mảng tệp cho input này thì tạo mới
-    if (!fileMap.has(inputId)) {
-        fileMap.set(inputId, []);
-    }
-
-    // Lấy mảng tệp hiện tại và nối thêm các tệp mới
-    const currentFiles = fileMap.get(inputId);
-    fileMap.set(inputId, currentFiles.concat(files));
-
-    // Cập nhật số lượng tệp đã tải lên
-    const fileCountSpan = input.nextElementSibling;
-    const totalFiles = fileMap.get(inputId).length;
-    fileCountSpan.textContent = `${totalFiles} tệp`;
-
-    // Thêm lớp CSS nổi bật
-    if (totalFiles > 0) {
-        input.classList.add('file-uploaded');
-    } else {
-        input.classList.remove('file-uploaded');
-    }
-
-    // Xóa giá trị input để có thể upload lại cùng file nếu cần
-    input.value = '';
+    console.log()
 }
+
+
 
 // Lắng nghe sự kiện focus trên tất cả các input
 let selectedDiv = null;
@@ -81,9 +56,72 @@ function highlightDiv(div) {
     div.classList.add('active');
 }
 
+var input_quyet_dinh = [];
 function updateFileCount(input) {
     const fileCountSpan = input.parentElement.querySelector('.file-count');
+    input_quyet_dinh.push(input.files[0]);
     fileCountSpan.textContent = `${input.files.length} tệp`;
+
+    const fileCount = input.files.length;
+
+    // Kiểm tra nếu có file được chọn
+    if (fileCount > 0) {
+        input.classList.add("file-uploaded");  // Thêm lớp nổi bật
+    } else {
+        input.classList.remove("file-uploaded");  // Bỏ lớp nếu không có file
+    }
+}
+
+function get_poly_cong_nhan_sinh_vien() {
+    const inputExcel = document.getElementById('excelUpload');
+    const inputPdf = document.getElementById('1');
+    
+    // Lấy tệp từ input
+    const excelFile = inputExcel.files[0];
+    const pdfFile = inputPdf.files[0];
+
+    if (!excelFile || !pdfFile) {
+        alert('Vui lòng chọn cả file Excel và file PDF.');
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append('file', excelFile);    // Excel file
+    formData.append('files', pdfFile);     // PDF file
+    formData.append('cot_quyet_dinh', 'R');
+    formData.append('cot_ghi_chu', 'AB');
+    formData.append('ngay_sinh', 'O');
+    formData.append('gioi_tinh', 'P');
+    formData.append('dan_toc', 'Q');
+
+    fetch('http://localhost:8000/api/upload/poly-cong-nhan-sinh-vien', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            return response.json().then(errorData => {
+                throw new Error(`Lỗi: ${errorData.detail}`);
+            });
+        }
+        return response.blob();
+    })
+    .then(blob => {
+        console.log(blob)
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'updated_sinh_vien.xlsx';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        window.URL.revokeObjectURL(url);
+        alert('Tải file thành công!');
+    })
+    .catch(error => {
+        console.error('Lỗi khi gọi API:', error);
+        alert(error.message || 'Lỗi kết nối đến server');
+    });
 }
 
 function checkSelectedDiv() {
@@ -100,10 +138,18 @@ function checkSelectedDiv() {
     const fileCount = parseInt(fileCountSpan.textContent);
 
     if (fileCount > 0) {
-        messageElement.textContent = "OK";
-        messageElement.className = "message ok";
+        switch (chonQuyetDinh) {
+            case "poly_cnsv":
+                get_poly_cong_nhan_sinh_vien();
+                break;
+            default:
+                console.log("ko co");
+        }
+        
+
     } else {
         messageElement.textContent = "Chưa có tệp!";
         messageElement.className = "message";
     }
 }
+
