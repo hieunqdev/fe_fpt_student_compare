@@ -76,9 +76,11 @@ function get_poly_cong_nhan_sinh_vien() {
     const inputExcel = document.getElementById('excelUpload');
     const inputPdf = document.getElementById('1');
     
+    
     // Lấy tệp từ input
     const excelFile = inputExcel.files[0];
     const pdfFile = inputPdf.files[0];
+    const ten_quyet_dinh = document.getElementById('ten_quyet_dinh').value;
 
     if (!excelFile || !pdfFile) {
         alert('Vui lòng chọn cả file Excel và file PDF.');
@@ -93,6 +95,7 @@ function get_poly_cong_nhan_sinh_vien() {
     formData.append('ngay_sinh', 'O');
     formData.append('gioi_tinh', 'P');
     formData.append('dan_toc', 'Q');
+    formData.append('ten_quyet_dinh', ten_quyet_dinh);
 
     fetch('http://localhost:8000/api/upload/poly-cong-nhan-sinh-vien', {
         method: 'POST',

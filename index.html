@@ -155,6 +155,7 @@
         </div>
         <div class="function-section">
             <h3>5. Chọn loại quyết định để rà soát thông tin sinh viên:</label>
+            
             <select id="functionSelect" onchange="toggleCheckOptions()">
                 <option value="poly_cnsv">Công nhận sinh viên</option>
                 <option value="poly_cn">Chuyển ngành</option>
@@ -168,6 +169,8 @@
                 <option value="poly_cntn">Công nhận tốt nghiệp</option>
                 <option value="poly_gc">Ghi chú</option>
             </select>
+
+            <input type="text" id="ten_quyet_dinh" name="ten_quyet_dinh" placeholder="Nhập số quyết định">
         </div>
         <button onclick="checkSelectedDiv()">Kiểm tra</button>
         <div class="message" id="resultMessage"></div>
