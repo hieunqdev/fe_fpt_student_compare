@@ -97,7 +97,7 @@ function get_poly_cong_nhan_sinh_vien() {
     formData.append('dan_toc', 'Q');
     formData.append('ten_quyet_dinh', ten_quyet_dinh);
 
-    fetch('http://localhost:8000/api/upload/poly-cong-nhan-sinh-vien', {
+    fetch('http://172.31.65.71:8000/api/upload/poly-cong-nhan-sinh-vien', {
         method: 'POST',
         body: formData
     })
