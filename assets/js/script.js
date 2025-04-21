@@ -103,7 +103,7 @@ function get_poly_cong_nhan_sinh_vien(he_dao_tao) {
 
     }
 
-    fetch('https://976d-171-225-200-74.ngrok-free.app/api/upload_excel_api/', {
+    fetch('https://5870-171-225-200-74.ngrok-free.app/api/upload_excel_api/', {
         method: 'POST',
         body: formData
     })
@@ -111,7 +111,7 @@ function get_poly_cong_nhan_sinh_vien(he_dao_tao) {
     .then(data => {
         if (data.status === "success") {
             const link = document.createElement('a');
-            link.href = "http://976d-171-225-200-74.ngrok-free.app/media/excel_outputs/excel_doi_chieu.xlsx";
+            link.href = 'https://5870-171-225-200-74.ngrok-free.app/media/excel_outputs/excel_doi_chieu.xlsx';
             // link.download = 'excel_doi_chieu.xlsx';
             // document.body.appendChild(link);
             link.click();
