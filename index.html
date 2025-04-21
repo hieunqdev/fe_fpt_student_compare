@@ -23,6 +23,7 @@
                 <option value="polytechnic">FPT Polytechnic</option>
                 <option value="polyschool">FPT Polyschool</option>
             </select>
+            <div id="loi_he_dao_tao" style="color: red; display: none;">Vui lòng chọn hệ đào tạo!</div>
         </div>
         <div class="selection-container">
             <h3>2. Tải về template:</label>
@@ -34,6 +35,7 @@
         <div class="upload-section">
             <h3>3. Tải lên danh sách sinh viên:</label>
             <input type="file" id="excelUpload" accept=".xlsx, .xls">
+            <div id="loi_excel_file" style="color: red; display: none;">Vui lòng chọn tệp Excel (.xlsx hoặc .xls) hợp lệ!</div>
         </div>
         <div class="upload-section">
             <h3>4. Tải lên danh sách quyết định:</h3>
@@ -157,17 +159,16 @@
             <h3>5. Chọn loại quyết định để rà soát thông tin sinh viên:</label>
             
             <select id="functionSelect" onchange="toggleCheckOptions()">
-                <option value="poly_cnsv">Công nhận sinh viên</option>
-                <option value="poly_cn">Chuyển ngành</option>
-                <option value="poly_ccs">Chuyển cơ sở</option>
-                <option value="poly_nhtt">Nghỉ học tạm thời</option>
-                <option value="poly_nhtl">Nhập học trở lại</option>
-                <option value="poly_ck">Chuyển khung</option>
-                <option value="poly_mgmh">Miễn giảm môn học</option>
-                <option value="poly_kt">Khen thưởng</option>
-                <option value="poly_kl">Kỷ luật</option>
-                <option value="poly_cntn">Công nhận tốt nghiệp</option>
-                <option value="poly_gc">Ghi chú</option>
+                <option value="Công nhận sinh viên">Công nhận sinh viên</option>
+                <option value="Chuyển ngành">Chuyển ngành</option>
+                <option value="Chuyển cơ sở">Chuyển cơ sở</option>
+                <option value="Nghỉ học tạm thời">Nghỉ học tạm thời</option>
+                <option value="Nhập học trở lại">Nhập học trở lại</option>
+                <option value="Chuyển khung">Chuyển khung</option>
+                <option value="Miễn giảm môn học">Miễn giảm môn học</option>
+                <option value="Khen thưởng">Khen thưởng</option>
+                <option value="Kỷ luật">Kỷ luật</option>
+                <option value="Công nhận tốt nghiệp">Công nhận tốt nghiệp</option>
             </select>
 
             <input type="text" id="ten_quyet_dinh" name="ten_quyet_dinh" placeholder="Nhập số quyết định">
