@@ -111,7 +111,7 @@ function get_poly_cong_nhan_sinh_vien(he_dao_tao) {
     .then(data => {
         if (data.status === "success") {
             const link = document.createElement('a');
-            link.href = 'https://976d-171-225-200-74.ngrok-free.app/media/excel_outputs/excel_doi_chieu.xlsx';
+            link.href = "http://976d-171-225-200-74.ngrok-free.app/media/excel_outputs/excel_doi_chieu.xlsx";
             // link.download = 'excel_doi_chieu.xlsx';
             // document.body.appendChild(link);
             link.click();
