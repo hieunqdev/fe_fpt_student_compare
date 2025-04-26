@@ -1,7 +1,4 @@
 function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_file) {
-
-    console.log(pdf_file);
-
     if (he_dao_tao == 'FPT Polytechnic') {
         switch (danh_sach_quyet_dinh) {
             case 'Công nhận sinh viên':
@@ -132,7 +129,7 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
 }
 
 function getAPIUploadedPdf() {
-    fetch('http://172.31.65.71:8000/api/uploaded_pdfs/')
+    fetch('https://c932-171-225-200-74.ngrok-free.app/api/uploaded_pdfs/')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok: ' + response.statusText);
@@ -367,7 +364,7 @@ function get_poly_cong_nhan_sinh_vien(he_dao_tao) {
 
     }
 
-    fetch('http://172.31.65.71:8000/api/upload_excel_api/', {
+    fetch('https://c932-171-225-200-74.ngrok-free.app/api/upload_excel_api/', {
         method: 'POST',
         body: formData
     })
