@@ -373,6 +373,15 @@ function get_poly_cong_nhan_sinh_vien(he_dao_tao) {
             if (data.status === "success") {
                 const link = document.createElement('a');
                 link.href = 'http://c932-171-225-200-74.ngrok-free.app/media/excel_outputs/excel_doi_chieu.xlsx';
+
+                var div = document.querySelector('#ketQua');
+                var a = createElement('a');
+
+                a.textContent = 'Tải về Kết quả';
+                a.href = link.href;
+
+                a.appendChild(div);
+
                 // link.download = 'excel_doi_chieu.xlsx';
                 document.body.appendChild(link);
                 link.click();
