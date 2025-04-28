@@ -126,10 +126,140 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 return;
         }
     }
+
+    if (he_dao_tao == 'FPT Polyschool') {
+
+        console.log()
+        switch (danh_sach_quyet_dinh) {
+            case 'Quyết định công nhận sinh viên':
+                var ul = document.querySelector('#filePdfCongNhanSinhVienLstFPS');
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+
+                a.textContent = pdf_file;
+                a.href = pdf_file;
+
+                li.appendChild(a);
+                ul.appendChild(li);
+                break;
+
+            case 'Quyết định công nhận chuyên ngành':
+                var ul = document.querySelector('#filePdfChuyenNganhLstFPS');
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+
+                a.textContent = pdf_file;
+                a.href = pdf_file;
+
+                li.appendChild(a);
+                ul.appendChild(li);
+                break;
+
+            case 'Quyết định miễn giảm':
+                var ul = document.querySelector('#filePdfMienGiamhLstFPS');
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+
+                a.textContent = pdf_file;
+                a.href = pdf_file;
+
+                li.appendChild(a);
+                ul.appendChild(li);
+                break;
+
+            case 'Quyết định chuyển ngành':
+                var ul = document.querySelector('#filePdfChuyenNganhLstFPS');
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+
+                a.textContent = pdf_file;
+                a.href = pdf_file;
+
+                li.appendChild(a);
+                ul.appendChild(li);
+                break;
+
+            case 'Quyết định bảo lưu':
+                var ul = document.querySelector('#filePdfBaoLuuLstFPS');
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+
+                a.textContent = pdf_file;
+                a.href = pdf_file;
+
+                li.appendChild(a);
+                ul.appendChild(li);
+                break;
+
+            case 'Quyết định thôi học':
+                var ul = document.querySelector('#filePdfThoiHocLstFPS');
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+
+                a.textContent = pdf_file;
+                a.href = pdf_file;
+
+                li.appendChild(a);
+                ul.appendChild(li);
+                break;
+
+            case 'Quyết định chuyển cơ sở':
+                var ul = document.querySelector('#filePdfChuyenCoSoLstFPS');
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+
+                a.textContent = pdf_file;
+                a.href = pdf_file;
+
+                li.appendChild(a);
+                ul.appendChild(li);
+                break;
+
+            case 'Quyết định khen thưởng':
+                var ul = document.querySelector('#filePdfKhenThuongLstFPS');
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+
+                a.textContent = pdf_file;
+                a.href = pdf_file;
+
+                li.appendChild(a);
+                ul.appendChild(li);
+                break;
+
+            case 'Quyết định kỷ luật':
+                var ul = document.querySelector('#filePdfKyLuatLstFPS');
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+
+                a.textContent = pdf_file;
+                a.href = pdf_file;
+
+                li.appendChild(a);
+                ul.appendChild(li);
+                break;
+
+
+            case 'Quyết định tốt nghiệp Trung cấp':
+                var ul = document.querySelector('#filePdfTotNghiepTrungCapLstFPS');
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+
+                a.textContent = pdf_file;
+                a.href = pdf_file;
+
+                li.appendChild(a);
+                ul.appendChild(li);
+                break;
+
+            default:
+                return;
+        }
+    }
 }
 
 function getAPIUploadedPdf() {
-    fetch('https://c932-171-225-200-74.ngrok-free.app/api/uploaded_pdfs/')
+    fetch('http://172.31.65.71:8000/api/uploaded_pdfs/')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok: ' + response.statusText);
@@ -139,19 +269,25 @@ function getAPIUploadedPdf() {
         .then(data => {
             // Lọc dữ liệu theo hệ đào tạo
             const fptPolytechnic = data.filter(item => item.he_dao_tao === 'FPT Polytechnic');
-            const pftPolyschool = data.filter(item => item.he_dao_tao === 'PFT Polyschool');
+            const pftPolyschool = data.filter(item => item.he_dao_tao === 'FPT Polyschool');
+
+            console.log(pftPolyschool)
 
             if (fptPolytechnic.length != 0) {
-                for (var i=0; i< fptPolytechnic.length; i++) {
+                for (var i = 0; i < fptPolytechnic.length; i++) {
                     updateTaiLenDanhSachQuyetDinh(fptPolytechnic[i].he_dao_tao,
                         fptPolytechnic[i].danh_sach_quyet_dinh,
                         fptPolytechnic[i].pdf_file);
                 }
-                
+
             }
 
             if (pftPolyschool.length != 0) {
-                // console.table(pftPolyschool[0]);
+                for (var i = 0; i<pftPolyschool.length; i++) {
+                    updateTaiLenDanhSachQuyetDinh(pftPolyschool[i].he_dao_tao,
+                        pftPolyschool[i].danh_sach_quyet_dinh,
+                        pftPolyschool[i].pdf_file);
+                } 
             }
 
         })
@@ -364,7 +500,7 @@ function get_poly_cong_nhan_sinh_vien(he_dao_tao) {
 
     }
 
-    fetch('https://c932-171-225-200-74.ngrok-free.app/api/upload_excel_api/', {
+    fetch('http://172.31.65.71:8000/api/upload_excel_api/', {
         method: 'POST',
         body: formData
     })
@@ -372,7 +508,7 @@ function get_poly_cong_nhan_sinh_vien(he_dao_tao) {
         .then(data => {
             if (data.status === "success") {
                 const link = document.createElement('a');
-                link.href = 'http://c932-171-225-200-74.ngrok-free.app/media/excel_outputs/excel_doi_chieu.xlsx';
+                link.href = 'http://172.31.65.71:8000/media/excel_outputs/excel_doi_chieu.xlsx';
 
                 var div = document.querySelector('#ketQua');
                 var a = createElement('a');
