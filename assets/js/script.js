@@ -259,7 +259,7 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
 }
 
 function getAPIUploadedPdf() {
-    fetch('http://172.31.65.71:8000/api/uploaded_pdfs/')
+    fetch('https://8047-171-225-200-187.ngrok-free.app/api/uploaded_pdfs/')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok: ' + response.statusText);
@@ -501,7 +501,7 @@ function get_poly_cong_nhan_sinh_vien(he_dao_tao) {
 
     }
 
-    fetch('http://172.31.65.71:8000/api/upload_excel_api/', {
+    fetch('https://8047-171-225-200-187.ngrok-free.app/api/upload_excel_api/', {
         method: 'POST',
         body: formData
     })
@@ -509,7 +509,7 @@ function get_poly_cong_nhan_sinh_vien(he_dao_tao) {
         .then(data => {
             if (data.status === "success") {
                 const link = document.createElement('a');
-                link.href = 'http://172.31.65.71:8000/media/excel_outputs/excel_doi_chieu.xlsx';
+                link.href = 'https://8047-171-225-200-187.ngrok-free.app/media/excel_outputs/excel_doi_chieu.xlsx';
 
                 // var div = document.querySelector('#ketQua');
                 // var a = createElement('a');
@@ -619,7 +619,7 @@ function checkSelectedDiv() {
 function resetPoly() {
     const formData = new FormData();
         formData.append('he_dao_tao', 'FPT Polytechnic');
-        fetch('http://172.31.65.71:8000/api/delete_uploaded_pdfs/', {
+        fetch('https://8047-171-225-200-187.ngrok-free.app/api/delete_uploaded_pdfs/', {
             method: 'POST',
             body: formData
         })
@@ -641,7 +641,7 @@ function resetPoly() {
 function resetPolyschool() {
     const formData = new FormData();
         formData.append('he_dao_tao', 'FPT Polyschool');
-        fetch('http://172.31.65.71:8000/api/delete_uploaded_pdfs/', {
+        fetch('https://8047-171-225-200-187.ngrok-free.app/api/delete_uploaded_pdfs/', {
             method: 'POST',
             body: formData
         })
