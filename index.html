@@ -100,7 +100,8 @@
             
         </div>
 
-        <div class="polytechnic-decision hidden">
+        <div style="text-align: left;" class="polytechnic-decision hidden">
+            <button style="width: 100px;" onclick="resetPoly()">Reset</button>
             <!-- danh sách quyết định đã tải lên poly -->
             <div id="filePdfCongNhanSinhVienLst">
                 <ul id="congNhanSinhVien">
@@ -221,7 +222,8 @@
         </div>
 
         <!-- Danh sách đã tải lên Polyschool -->
-        <div class="polyschool-decision hidden">
+        <div style="text-align: left;" class="polyschool-decision hidden">
+            <button style="width: 100px;" onclick="resetPolyschool()">Reset</button>
             <!-- danh sách quyết định đã tải lên poly -->
             <div id="filePdfCongNhanSinhVienLstFPS">
                 <ul id="congNhanSinhVienFPS">
@@ -321,8 +323,7 @@
             <input hidden type="text" id="ten_quyet_dinh" name="ten_quyet_dinh" placeholder="Nhập số quyết định">
         </div>
         <button onclick="checkSelectedDiv()">Kiểm tra</button>
-        <div id="ketQua"></div>
-        <div class="message" id="resultMessage"></div>
+        
 
 
 
