@@ -313,14 +313,15 @@ function downloadTemplate() {
 
 var chonQuyetDinh = "poly_cnsv";
 function toggleCheckOptions() {
-    const functionSelect = document.getElementById('functionSelect').value;
-    switch (functionSelect) {
-        case "poly_cnsv":
-            chonQuyetDinh = "poly_cnsv";
-            break;
-        default:
-            return;
-    }
+    // const functionSelect = document.getElementById('functionSelect').value;
+    // switch (functionSelect) {
+    //     case "poly_cnsv":
+    //         chonQuyetDinh = "poly_cnsv";
+    //         break;
+    //     default:
+    //         return;
+    // }
+    console.log('toggleCheckOptions');
 }
 
 // upload pdf file
@@ -510,13 +511,13 @@ function get_poly_cong_nhan_sinh_vien(he_dao_tao) {
                 const link = document.createElement('a');
                 link.href = 'http://172.31.65.71:8000/media/excel_outputs/excel_doi_chieu.xlsx';
 
-                var div = document.querySelector('#ketQua');
-                var a = createElement('a');
+                // var div = document.querySelector('#ketQua');
+                // var a = createElement('a');
 
-                a.textContent = 'Tải về Kết quả';
-                a.href = link.href;
+                // a.textContent = 'Tải về Kết quả';
+                // a.href = link.href;
 
-                a.appendChild(div);
+                // a.appendChild(div);
 
                 // link.download = 'excel_doi_chieu.xlsx';
                 document.body.appendChild(link);
@@ -613,5 +614,47 @@ function checkSelectedDiv() {
         messageElement.textContent = "Chưa có tệp!";
         messageElement.className = "message";
     }
+}
+
+function resetPoly() {
+    const formData = new FormData();
+        formData.append('he_dao_tao', 'FPT Polytechnic');
+        fetch('http://172.31.65.71:8000/api/delete_uploaded_pdfs/', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json()) // Chuyển đổi phản hồi thành JSON
+            .then(data => {
+                if (data.status === "200") {
+                    alert('Xóa thành công');
+                } else {
+                    alert('Xóa thành công');
+                }
+            })
+            .catch(error => {
+                console.error('Có lỗi xảy ra khi gửi yêu cầu: ', error);
+            });
+
+    
+}
+
+function resetPolyschool() {
+    const formData = new FormData();
+        formData.append('he_dao_tao', 'FPT Polyschool');
+        fetch('http://172.31.65.71:8000/api/delete_uploaded_pdfs/', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json()) // Chuyển đổi phản hồi thành JSON
+            .then(data => {
+                if (data.status === "200") {
+                    alert('Xóa thành công');
+                } else {
+                    alert('Xóa thành công');
+                }
+            })
+            .catch(error => {
+                console.error('Có lỗi xảy ra khi gửi yêu cầu: ', error);
+            });
 }
 
