@@ -1,4 +1,4 @@
-function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_file) {
+function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_file, ten_file) {
     if (he_dao_tao == 'FPT Polytechnic') {
         switch (danh_sach_quyet_dinh) {
             case 'Công nhận sinh viên':
@@ -6,8 +6,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -18,8 +24,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -30,8 +42,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -42,8 +60,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -54,8 +78,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -66,8 +96,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -78,8 +114,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -90,8 +132,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -102,8 +150,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -115,8 +169,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -136,8 +196,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -148,8 +214,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -160,8 +232,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -172,8 +250,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -184,8 +268,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -196,8 +286,17 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
+
+                // Thêm checkbox trước, sau đó mới đến thẻ a
+                li.appendChild(checkbox);
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -208,8 +307,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -220,8 +325,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -232,8 +343,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -245,8 +362,14 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
                 var li = document.createElement('li');
                 var a = document.createElement('a');
 
-                a.textContent = pdf_file;
+                var checkbox = document.createElement('input');
+
+                a.textContent = ten_file;
                 a.href = pdf_file;
+
+                checkbox.type = 'checkbox';
+                checkbox.name = 'pdfCheckbox';
+                checkbox.value = ten_file; // hoặc giá trị tùy ý
 
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -259,7 +382,11 @@ function updateTaiLenDanhSachQuyetDinh(he_dao_tao, danh_sach_quyet_dinh, pdf_fil
 }
 
 function getAPIUploadedPdf() {
-    fetch('https://8047-171-225-200-187.ngrok-free.app/api/uploaded_pdfs/')
+    fetch('http://172.31.65.71:8000/api/uploaded_pdfs/', {
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok: ' + response.statusText);
@@ -277,7 +404,8 @@ function getAPIUploadedPdf() {
                 for (var i = 0; i < fptPolytechnic.length; i++) {
                     updateTaiLenDanhSachQuyetDinh(fptPolytechnic[i].he_dao_tao,
                         fptPolytechnic[i].danh_sach_quyet_dinh,
-                        fptPolytechnic[i].pdf_file);
+                        fptPolytechnic[i].pdf_file,
+                        fptPolytechnic[i].ten_file);
                 }
 
             }
@@ -286,13 +414,15 @@ function getAPIUploadedPdf() {
                 for (var i = 0; i<pftPolyschool.length; i++) {
                     updateTaiLenDanhSachQuyetDinh(pftPolyschool[i].he_dao_tao,
                         pftPolyschool[i].danh_sach_quyet_dinh,
-                        pftPolyschool[i].pdf_file);
+                        pftPolyschool[i].pdf_file,
+                        pftPolyschool[i].ten_file);
                 } 
             }
 
         })
         .catch(error => {
             console.error('Lỗi khi gọi API:', error);
+            console.log(error);
         });
 }
 
@@ -501,7 +631,7 @@ function get_poly_cong_nhan_sinh_vien(he_dao_tao) {
 
     }
 
-    fetch('https://8047-171-225-200-187.ngrok-free.app/api/upload_excel_api/', {
+    fetch('http://172.31.65.71:8000/api/upload_excel_api/', {
         method: 'POST',
         body: formData
     })
@@ -509,7 +639,7 @@ function get_poly_cong_nhan_sinh_vien(he_dao_tao) {
         .then(data => {
             if (data.status === "success") {
                 const link = document.createElement('a');
-                link.href = 'https://8047-171-225-200-187.ngrok-free.app/media/excel_outputs/excel_doi_chieu.xlsx';
+                link.href = 'http://172.31.65.71:8000/media/excel_outputs/excel_doi_chieu.xlsx';
 
                 // var div = document.querySelector('#ketQua');
                 // var a = createElement('a');
@@ -619,7 +749,7 @@ function checkSelectedDiv() {
 function resetPoly() {
     const formData = new FormData();
         formData.append('he_dao_tao', 'FPT Polytechnic');
-        fetch('https://8047-171-225-200-187.ngrok-free.app/api/delete_uploaded_pdfs/', {
+        fetch('http://172.31.65.71:8000/api/delete_uploaded_pdfs/', {
             method: 'POST',
             body: formData
         })
@@ -641,7 +771,7 @@ function resetPoly() {
 function resetPolyschool() {
     const formData = new FormData();
         formData.append('he_dao_tao', 'FPT Polyschool');
-        fetch('https://8047-171-225-200-187.ngrok-free.app/api/delete_uploaded_pdfs/', {
+        fetch('http://172.31.65.71:8000/api/delete_uploaded_pdfs/', {
             method: 'POST',
             body: formData
         })
